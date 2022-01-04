@@ -7,3 +7,6 @@ def hello_world():
     return "<p>Hello, World!</p>"
 def hello():
     pass
+
+def custom():
+    pass
