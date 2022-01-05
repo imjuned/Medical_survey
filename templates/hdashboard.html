@@ -41,26 +41,29 @@
                     <ul class="navlist navbar-nav ms-auto mt-lg-0 ">
                         <li class="nav-item"><a class="nav-link text-white nav-margin  active" href="#"><span
                                     class="icon"><i class='fas fa-home '></i></span>Home</a></li>
-                        <li class="nav-item"><a class="nav-link text-white nav-margin " href="#"><span class="icon"><i
+                        <li class="nav-item"><a class="nav-link text-white nav-margin " href="AddPatient"><span class="icon"><i
                                         class='fas fa-newspaper '></i></span>Add Patient</a></li>
-                        <li class="nav-item"><a class="nav-link text-white nav-margin " href="#">Common Diease</a></li>
+                        <li class="nav-item"><a class="nav-link text-white nav-margin " href="commondisease">Common Diease</a></li>
                         <li class="nav-item"><a class="nav-link text-white nav-margin " href="#"><i
                                     class="fas fa-university"></i>Unkonwn Diease</a></li>
                         <!-- <li class="nav-item"><a class="nav-link text-white nav-margin " href="#"><span class="icon"><i
                                         class="fas fa-sign-in-alt"></i></i></span>Sign in</a></li> -->
                         <li class="nav-item"><a class="nav-link text-white nav-margin " href="#"><span class="icon"><i
                                     >Appoiment</i></span></a></li>
-                    </ul>
+                                    
+                    </ul><button class="btn btn-primary " style="background-color: red;">logout</button>
                     <!-- </div> -->
                     <!-- </nav> -->
                     <!-- Navbar End -->
                     <!-- </ul> -->
                     <!-- </div> -->
-                </div><button class="btn btn-primary " style="background-color: red;">logout</button>
+                    
+                </div>
             </nav>
     </header>
 
     <div class="container" style="margin-top: 5rem !important;">
+        {% block content %}{% endblock %}
 
     </div>
     </main>
