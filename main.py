@@ -26,7 +26,7 @@ def signup():
 
 @app.route('/hospital/Dashboard')
 def dashboard():
-    return render_template('hdashboard.html')
+    return render_template('/hospital/hospitaldash.html')
 
 @app.route('/hospital/AddPatient')
 def addpatient():
