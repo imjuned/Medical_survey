@@ -1,0 +1,51 @@
+{% extends "/hdashboard.html" %}
+
+{% block content %}
+<section class="section dashboard">
+
+    <div class="row justify-center">
+        <div class="col-lg-10">
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Patient health Detail</h5>
+                    <form class="row g-3">
+                        <div class="col-md-6">
+                            <label for="patient Id" class="form-label">Pateints UID</label>
+                            <input type="number" class="form-control" id="patient Id">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="Diease name" class="form-label">Diease Name</label>
+                            <select id="Diease name" class="form-select">
+                                <option selected>Choose...</option>
+                                <option>Fever</option>
+                                <option>Maleria</option>
+                                <option>cough</option>
+                                <option>other</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="other disease" class="form-label">Other (if any)</label>
+                            <input type="text" class="form-control" id="other disease">
+                        </div>
+
+                        <div class="col-md-4">
+                            <label for="sick" class="form-label">How long you are sick ? in days)</label>
+                            <input type="number" class="form-control" id="sick">
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="reset" class="btn btn-secondary">Reset</button>
+                        </div>
+                        <!-- second No in radio button of  -->
+
+                </div>
+                </div>
+                </div>
+                </div>
+                </section>
+                
+
+
+
+                {% endblock %}
