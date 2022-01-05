@@ -1,0 +1,121 @@
+{% extends "/hdashboard.html" %}
+
+{% block content %}
+<section class="section dashboard">
+
+    <div class="row">
+        <div class="col-lg-10">
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Patient health Detail</h5>
+
+                    <!-- General Form Elements -->
+                    <!-- we should render page as user click on Yes and NO because icon is not loaded  -->
+                    <form class="row g-3">
+                     <div class="col-md-6">
+                        <label for="patient Id" class="form-label">Pateints UID</label>
+                        <input type="number" class="form-control" id="patient Id">
+                </div>
+                <label for="patient Id" class="form-label">Select Symptoms </label>
+                <div class="col-md-4">
+                    <label for="patient Id" class="form-label">Fever</label>
+                    <input type="checkbox" name="fever" id="fever">
+
+
+                </div>
+                <div class="col-md-4">
+                    <label for="patient Id" class="form-label">Abdominl Pain </label>
+                    <input type="checkbox" name="fever" id="fever">
+
+
+                </div>
+                <div class="col-md-4">
+                    <label for="patient Id" class="form-label">Rashes</label>
+                    <input type="checkbox" name="fever" id="fever">
+
+
+                </div>
+                <div class="col-md-4">
+                    <label for="patient Id" class="form-label">Pain in legs or arm</label>
+                    <input type="checkbox" name="fever" id="fever">
+
+
+                </div>
+                <div class="col-md-4">
+                    <label for="patient Id" class="form-label">EAR pain</label>
+                    <input type="checkbox" name="fever" id="fever">
+
+
+                </div>
+                <div class="col-md-4">
+                    <label for="patient Id" class="form-label">Headache</label>
+                    <input type="checkbox" name="fever" id="fever">
+
+
+                </div>
+                <div class="col-md-4">
+                    <label for="patient Id" class="form-label">Breathing difficulty</label>
+                    <input type="checkbox" name="fever" id="fever">
+
+
+                </div>
+                <div class="col-md-4">
+                    <label for="patient Id" class="form-label">vomating</label>
+                    <input type="checkbox" name="fever" id="fever">
+
+
+                </div>
+                <div class="col-md-4">
+                    <label for="patient Id" class="form-label">Toothache</label>
+                    <input type="checkbox" name="fever" id="fever">
+
+
+                </div>
+                <div class="col-md-4">
+                    <label for="patient Id" class="form-label">Diarhea</label>
+                    <input type="checkbox" name="fever" id="fever">
+
+
+                </div>
+                <label for="patient Id" class="form-label">Other (seprated by, or space)</label>
+                <div class="col-md-9">
+
+                    <textarea name="other symptoms" id="sympots not include" cols="40" rows="5"></textarea>
+                </div>
+
+
+
+
+                <div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+
+<!-- <div class="col-md-7">
+<button type="submit" class="btn btn-primary"><a href="#" style="text-decoration: none;
+    color: white;">YES</a></button>
+
+
+</div> -->
+
+<div class="col-md-6">
+</div>
+
+</form>
+
+<br>
+</div>
+
+</div><!-- End Right side columns -->
+</div>
+</div>
+</section>
+{%endblock%}

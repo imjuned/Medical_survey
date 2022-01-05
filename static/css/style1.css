@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Langar&display=swap');
+
+/* Navigation styling */
+
+.icon {
+    overflow: hidden;
+    margin-left: 5px;
+    padding: 3px;
+}
+
+.navlist {
+    text-align: center;
+    /* margin-left: 3px; */
+    font-weight: bold;
+    text-transform: uppercase;
+    border-bottom: 1.2px solid transparent;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.navlist a:hover {
+    border-bottom: 2px solid black;
+    padding: auto;
+    border-radius: 2px;
+    color: #004243;
+}
+
+.navlist a li {
+    transition: all 0.3s ease 0s;
+}
+
+
+/* Navigation end */
+
+
+/* carosel */
+
+.carousel-size {
+    height: 35rem;
+}
+
+.carousel-item img {
+    object-fit: cover;
+}
+
+.carousel-item h2 {
+    color: #000;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.carousel-item p {
+    color: #000;
+}
+
+
+/* diseases info */
+
+.Dcolor {
+    border: 1px solid black;
+}
+
+h4 {
+    border-bottom: 1px solid #000;
+}
+
+
+/* The colour of the indicators */
+
+
+/* footer */
+
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+}
+
+
+/* Add a hover effect if you want */
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+
+/* Set a specific color for each brand */
+
+
+/* Facebook */
+
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+
+/* Twitter */
+
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+.footcol {
+    background-color: #25bff7;
+}
+
+.footcol a {
+    color: #000;
+    text-decoration: none;
+}
+
+.footcol {
+    margin-top: 7px;
+}
+
+.colors {
+    font-family: 'Courier New', Courier, monospace;
+    color: #000;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+.colors a {
+    text-decoration: none;
+    color: #000;
+}
+
+.ficon {
+    margin: 0 10px;
+    padding: 5px;
+}
