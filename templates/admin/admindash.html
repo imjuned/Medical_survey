@@ -106,7 +106,7 @@
                                         <table class="table table-borderless datatable">
                                             <thead>
                                                 <tr>
-                                                    <th scope="col">#</th>
+                                                    <th scope="col">Sr.No</th>
                                                     <th scope="col">Dieases Count</th>
                                                     <th scope="col">Hospital</th>
                                                     <th scope="col">Area</th>
@@ -115,21 +115,25 @@
                                             </thead>
                                             <tbody>
 
-                                                <!-- <tr>
-                                                <th scope="row"><a href="#">#2147</a></th>
-                                                <td>Bridie Kessler</td>
-                                                <td><a href="#" class="text-primary">Blanditiis dolor omnis similique</a></td>
-                                                <td>$47</td>
-                                                <td><span class="badge bg-warning">Pending</span></td>
-                                            </tr>
 
-                                            <tr>
-                                                <th scope="row"><a href="#">#2644</a></th>
-                                                <td>Angus Grady</td>
-                                                <td><a href="#" class="text-primar">Ut voluptatem id earum et</a></td>
-                                                <td>$67</td>
-                                                <td><span class="badge bg-danger">Rejected</span></td>
-                                            </tr> -->
+                                                {% for n in range(0,4)%}
+                                                <tr>
+                                                    <th scope="col">#{{n+1}}</th>
+                                                    <th scope="col">{{data.Hopital_Name[n]}}</th>
+                                                    <th scope="col">{{data.Patients_Count[n]}}</th>
+                                                    <th scope="col">{{data.Area[n]}}</th>
+                                                    <th scope="col">-</th>
+                                                </tr>
+                                                {% endfor %}
+                                                <!--
+                                                <tr>
+                                                    <th scope="row"><a href="#">#2644</a></th>
+                                                    <td>Angus Grady</td>
+                                                    <td><a href="#" class="text-primar">Ut voluptatem id earum et</a></td>
+                                                    <td>$67</td>
+                                                    <td><span class="badge bg-danger">Rejected</span></td>
+                                                </tr> 
+                                                -->
 
                                             </tbody>
                                         </table>
