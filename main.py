@@ -38,12 +38,17 @@ def commondiease():
     # pass
     return render_template('/hospital/commondisease.html')
 
-@app.route('/hospital/unkonwndiease')
+@app.route('/hospital/unknown')
 def unknown():
-    print("test passed")
-    pass
+    return render_template('/hospital/unknown.html')
 
+@app.route('/admin')
+def admin():
+    return render_template('/admin/login.html')
 
-    # return render_template('input.html')
+@app.route('/admin/dashboard')
+def adminDash():
+    return render_template('/admin/dashboard.html')
+
 if __name__=='__main__':
     app.run(debug=True)
