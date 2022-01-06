@@ -9,18 +9,37 @@ from flask import flash
 
 app = Flask(__name__)
 
-app.config['SECRET_KEY'] = 'the random string'
+
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:@localhost/medical'
 
-
+app.config['SECRET_KEY'] = 'the random string'
 
 db = SQLAlchemy(app)
+
+def dbconn_ad(user,password):
+    if user=='admin1' and password=='123456':
+        return True
+    return False
+#admin Data base
+
 
 class admindash(db.Model):
     __tablename__="admindash"
     user_name = db.Column(db.String(50),primary_key=True)
     pass_w = db.Column(db.Integer)
+
+
+class hospitaldb(db.Model):
+    __tablename__="hospitaldb"
+    hospital_name = db.Column(db.String(50))
+    incharge_name = db.Column(db.String(50))
+    email = db.Column(db.String(50),primary_key=True)
+    mobile = db.Column(db.Integer)
+    user_n = db.Column(db.String)
+    pssword = db.Column(db.String(18))
+
+
 
 @app.route('/admin',methods=['GET','POST'])
 def admin():
@@ -34,14 +53,13 @@ def admin():
         # db.session.commit()
         # print("Successful!")
         # # print(password,User)
-        data1 = admindash.query.all()
-        print(data1)
-        for i in data1:
-            if i.user_name==User and i.pass_w==password:
-                return redirect('/admin/dashboard')
-                    # print("redited")
-            else:
-                flash("some text to flash")
+        # data1 = admindash.query.filter_by(user_name='admin1').first()
+        # i=data1[1].pass_w
+        # print(data1)
+        if (dbconn_ad(User,password)):
+            return redirect('/admin/dashboard')
+        else:
+            flash("some text to flash")
     print('nothinghapped')
     return render_template('/admin/login.html')
 
@@ -66,8 +84,24 @@ def signin():
 
     return render_template('/hospital/signin.html')
 
-@app.route('/signup')
+@app.route('/signup',methods=['GET','POST'])
 def signup():
+    if (request.method=='POST'):
+        nameh=0
+        nameh = request.form.get('name')
+        incharge = request.form.get('inchargename')
+        email = request.form.get('email')
+        mobile = request.form.get('mobile')
+        user = request.form.get('usern')
+        password = request.form.get('password')
+        
+        # # print(User)
+        entry = hospitaldb(hospital_name=nameh,incharge_name=incharge,email=email,mobile=mobile,user_n=user,pssword=password)
+        db.session.add(entry)
+        db.session.commit()
+        
+        return redirect('/signin')
+
     return render_template('/hospital/signup.html')
 
 @app.route('/hospital/Dashboard')
@@ -108,6 +142,9 @@ def adminView():
         # 'Status':['-','-','known','known']
     }
     return render_template('/admin/admindash.html',data=data)
+@app.route("/logout")
+def logout():
+    return redirect('/')
 
 if __name__=='__main__':
     app.run(debug=True)
