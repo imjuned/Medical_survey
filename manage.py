@@ -2,8 +2,10 @@ import os
 from flask import Flask
 from flask import render_template,request,redirect,url_for
 from flask_mysqldb import MySQL
+
 from flask_sqlalchemy import SQLAlchemy
 from flask import flash
+
 
 # basedir=os.path.abspath(os.path.dirname(__file__))
 
@@ -22,7 +24,7 @@ def dbconn_ad(user,password):
         return True
     return False
 #admin Data base
-
+#Data Base goes here
 
 class admindash(db.Model):
     __tablename__="admindash"
@@ -40,6 +42,30 @@ class hospitaldb(db.Model):
     pssword = db.Column(db.String(18))
 
 
+class patientdetail(db.Model):
+    __tablename__="patientdetail"
+    Name = db.Column(db.String(50))
+    aadhar= db.Column(db.String(50),primary_key=True)
+    mobile = db.Column(db.Integer)
+    gender = db.Column(db.Integer)
+    address = db.Column(db.String(50))
+    state = db.Column(db.String(50))
+    Taluqa = db.Column(db.String(50))
+    zipcode =  db.Column(db.String(50))
+    
+class patientknown(db.Model):
+    __tablename__="patientknown"
+    uid = db.Column(db.String(50),primary_key=True)
+    Dieasename = db.Column(db.String(50))
+    other = db.Column(db.String(50))
+    traveltime = db.Column(db.Integer)
+    
+class patientunknown(db.Model):
+    __tablename__="patientunknown"
+    uid = db.Column(db.String(50),primary_key=True)
+    symptoms = db.Column(db.String(50))
+    
+#Tables End here
 
 @app.route('/admin',methods=['GET','POST'])
 def admin():
@@ -78,6 +104,18 @@ def login():
 
 @app.route('/signin')
 def signin():
+    if (request.method=='POST'):
+        user = request.form.get('usernameh')
+        password = request.form.get('passwordh')
+        print(user,password)
+        data = hospitaldb.query.all()
+        print(data)
+        for i in data:
+            print(data)
+            if data.i.hospital_name==user and i.data.pssword==password:
+                return(redirect(url_for('/Hospital/Dashboard')))
+
+        
     # # if ()
     # #     if 
     #     return(redirect(url_for('/Hospital/Dashboard')))
@@ -145,6 +183,15 @@ def adminView():
 @app.route("/logout")
 def logout():
     return redirect('/')
+
+
+@app.route("/table")
+def readtable():
+    data = admindash.query.all()
+    print(type(data))
+    print(data)
+    return render_template("/hospital/table.html", data = data)
+
 
 if __name__=='__main__':
     app.run(debug=True)
