@@ -43,16 +43,63 @@
     object-fit: cover;
 }
 
+
+
+/* 
+Text writing style css
+*/
+
+
+.typewriter {
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+      typing 3.5s steps(40, end),
+      blink-caret .75s step-end infinite;
+  }
+  
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 55% }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% {}
+  }
+
+
+/* --------------------------------------------------------- */
 .carousel-item h2 {
-    color: #000;
+    /* color: #000; */
+    display: inline-block;
     text-transform: uppercase;
+   font: bold 24px/45px 'Oswald', sans-serif; 
+   letter-spacing: -1px;  
+   background: rgb(0, 0, 0); /* fallback color */
+   background: rgba(0, 0, 0, 0.7);
+   padding: 10px; 
     font-weight: 700;
-    font-family: Arial, Helvetica, sans-serif;
+    /* font-family: 'Oswald', sans-serif; */
 }
 
-.carousel-item p {
-    color: #000;
+.carousel-item p,h3 {
+    /* color: #000;
+    font-family: 'Oswald', sans-serif; */
+    color: white; 
+    text-transform: uppercase;
+   font: bold 24px/45px 'Oswald', sans-serif; 
+   letter-spacing: -1px;  
+   background: rgb(0, 0, 0); /* fallback color */
+   background: rgba(0, 0, 0, 0.7);
+   padding: 10px; 
 }
+
 
 
 /* diseases info */
