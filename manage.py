@@ -48,9 +48,9 @@ def admin():
         password = request.form.get('password')
         # # print(User)
         # # print(password)#for regiy
-        # entry = admindash(user_name=User,pass_w=password)
-        # db.session.add(entry)
-        # db.session.commit()
+        entry = admindash(user_name=User,pass_w=password)
+        db.session.add(entry)
+        db.session.commit()
         # print("Successful!")
         # # print(password,User)
         # data1 = admindash.query.filter_by(user_name='admin1').first()
