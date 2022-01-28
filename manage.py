@@ -14,6 +14,7 @@ app = Flask(__name__)
 
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:@localhost/medical'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 
 app.config['SECRET_KEY'] = 'the random string'
 
@@ -64,7 +65,10 @@ class patientunknown(db.Model):
     __tablename__="patientunknown"
     uid = db.Column(db.String(50),primary_key=True)
     symptoms = db.Column(db.String(50))
-    
+
+
+
+
 #Tables End here
 
 @app.route('/admin',methods=['GET','POST'])
